@@ -1,47 +1,40 @@
 <?php
 
 if (!defined('MODULE_FILE')) {
-	die ("You can't access this file directly...");
+	header("Location: index.php");
+	die();
 }
 
-$index = 1;
 require_once("cmsmain.php");
-$module_name = basename(dirname(__FILE__));
 
 function impressum() {
     global $prefix, $db, $name, $op, $cmsoption, $sitetheme, $language;
 
     include ('header.php');
 
-	$countrystats = $db->sql_fetchrow($db->sql_query("SELECT * FROM ".$prefix."_country WHERE id='$cmsoption[countryid]'"));
 	$box_title = ""._IMPRESSUM."";
-//	$member = addslashes(base64_decode($member));
-//	$member = explode(":", $member);
-
 	$box_firm = $cmsoption[firm];
 	$box_holder = $cmsoption[holder];
 	$box_street = $cmsoption[street];
 	$box_zipcode = $cmsoption[zipcode];
 	$box_city = $cmsoption[city];
-
-	if ($language == $cmsoption[languagetwo] AND $language != "" AND $countrystats[nametwo] != "") {
-		$box_country = $countrystats[nametwo];
-	}else{
-		$box_country = $countrystats[name];
-	}
-
 	$box_taxid = $cmsoption[taxid];
 	$box_vatid = $cmsoption[vatid];
 	$box_venue = $cmsoption[venue];
 	$box_register = $cmsoption[register];
-
 	$box_phoneone = $cmsoption[phoneone];
 	$box_phonetwo = $cmsoption[phonetwo];
 	$box_fax = $cmsoption[fax];
 	$box_email = $cmsoption[email];
-
 	$box_website = $cmsoption[website];
 	$box_contentby = $cmsoption[content];
+ 
+ 	$countrystats = $db->sql_fetchrow($db->sql_query("SELECT * FROM ".$prefix."_country WHERE id='$cmsoption[countryid]'"));
+ 	if ($language == $cmsoption[languagetwo] AND $language != "" AND $countrystats[nametwo] != "") {
+		$box_country = $countrystats[nametwo];
+	}else{
+		$box_country = $countrystats[name];
+	}
 
 	include("themes/$sitetheme/templates/box_content_open.tpl");
 	include("themes/$sitetheme/templates/impressum.tpl");
