@@ -8,9 +8,9 @@ if (!defined('MODULE_FILE')) {
 require_once("cmsmain.php");
 
 function impressum() {
-    global $prefix, $db, $name, $op, $cmsoption, $sitetheme, $language;
+	global $prefix, $db, $name, $op, $cmsoption, $sitetheme, $language;
 
-    include ('header.php');
+	include ('header.php');
 
 	$box_title = ""._IMPRESSUM."";
 	$box_firm = $cmsoption[firm];
@@ -63,7 +63,7 @@ function impressum() {
 			include("themes/$sitetheme/templates/box_content.tpl");
 		}
 	}
-    include ('footer.php');
+	include ('footer.php');
 }
 
 
