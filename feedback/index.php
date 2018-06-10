@@ -1,7 +1,8 @@
 <?php
 
 if (!defined('MODULE_FILE')) {
-	die ("You can't access this file directly...");
+	header("Location: index.php");
+	die();
 }
 
 $save = $_POST['save'];
