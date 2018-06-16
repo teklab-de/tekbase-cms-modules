@@ -8,4 +8,4 @@ These are the open source TekBASE CMS modules. You can change them as you like a
 Copy the folder "modules" into your TekBASE installation. Under "Releases" you will find the download for your TekBASE version.
 
 ## License
-Copyright (c) TekLab.de. Code released under the [OPL v1.0 License](http://https://gitgem.com/TekLab/TekBASE-CMS-modules/src/branch/master/LICENSE).
+Copyright (c) TekLab.de. Code released under the [OPL v1.0 License](http://https://gitgem.com/TekLab/tekbase-cms-modules/src/branch/master/LICENSE).
